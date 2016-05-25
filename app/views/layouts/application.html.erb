@@ -28,14 +28,18 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   
-  
+	<link rel="stylesheet" type="text/css" href="/assets/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/demo.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/component.css" />
+	<script src="/assets/snap.svg-min.js"></script>
+	
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
+  <!--<div class="container">-->
     <%= yield %>
-  </div>
+  <!--</div>-->
 </body>
 </html>
