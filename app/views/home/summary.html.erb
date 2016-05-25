@@ -1,0 +1,26 @@
+<h4 style="margin-top:40px;">Summary</h4>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Content</th>
+      <th>WordCount</th>
+      <th>CharCount<br><h6>(w/o space)</h6></th>
+      <th>CharCount<br><h6>(with space)</h6></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |x| %>
+      <tr>
+        <td><%=x.id%></th>
+        <td><%=x.content%></td>
+        <td><%=x.wordcount%></td>
+        <td><%=x.charcount1%></td>
+        <td><%=x.charcount2%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<button type="back" class="button hvr-sweep-to-left" style="float: right;" onclick="location.href='/'">뒤로가기</button>

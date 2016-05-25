@@ -1,0 +1,75 @@
+<div id="testy" style="position: fixed; top; 0; right: 20px;"></div>
+
+<h4 style="margin-top:40px;">Word Counter</h4>
+
+<button type="back" class="button hvr-sweep-to-right" style="float:left;width:60px; height:40px;" onclick="location.href='/summary'">기록</button>
+
+<div id="button-test" style="top: 50; right:20px; text-align: right">
+  <button id="btn" style="border-radius:50%;width:10px;height:10px;"></button>
+  <button id="btn1" style="border-radius:50%;width:10px;height:10px;"></button>
+  <button id="btn2" style="border-radius:50%;width:10px;height:10px;"></button>
+</div>
+
+<form style="margin-top:10px;" action="/home/write" method="POST">
+  <textarea class="form-control" rows="20" name="content"></textarea>
+  <button type="submit" class="button hvr-underline-from-center" style="float: right;">제출!</button>
+</form>
+
+
+
+<script>
+
+  $('.form-control').textcounter({
+    type                     : "word",            // "character" or "word"
+  	countContainerClass      : "wordcount",   // class applied to the countContainerElement
+  	counterText              : "WordCount: ",        // counter text
+  	max                      : -1,                    // maximum number of characters/words, -1 for unlimited, 'auto' to use maxlength attribute
+  });
+  
+  $('.form-control').textcounter({
+  	type                     : "character",            // "character" or "word"
+  	countContainerClass      : "charcount1",   // class applied to the countContainerElement
+  	counterText              : "CharacterCount(w/o spaces): ",        // counter text
+  	countSpaces              : false,                  // count spaces as character (only for "character" type)
+  	max                      : -1,                    // maximum number of characters/words, -1 for unlimited, 'auto' to use maxlength attribute
+  });
+
+  $('.form-control').textcounter({
+  	type                     : "character",            // "character" or "word"
+  	countContainerClass      : "charcount2",   // class applied to the countContainerElement
+  	counterText              : "CharacterCount(with spaces): ",        // counter text
+  	countSpaces              : true,                  // count spaces as character (only for "character" type)
+  	max                      : -1,                    // maximum number of characters/words, -1 for unlimited, 'auto' to use maxlength attribute
+  });
+  
+  
+  // toastee
+	$('#btn').on('click', function(){
+		$('#testy').toastee();
+	});
+	$('#btn1').on('click', function(){
+		$('#testy').toastee({
+			type: 'success',
+			message: 'You have successfully saved your text!',
+		});
+	});
+	$('#btn2').on('click', function() {
+		$('#testy').toastee({
+			header: 'Warning!',
+			type: 'error',
+			message: 'Oh NOez!'
+		});
+	});
+	$('#btn3').on('click', function () {
+		$('#testy').toastee({
+			type: 'success',
+            header: 'Toastee',
+            message: 'Got Butter?',
+            color: 'yellow',
+            background: '#FFBB00',
+            width: 100,
+            height: 200,
+            fadeout: 500
+		});
+	});
+</script>
